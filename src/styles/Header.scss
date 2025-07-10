@@ -1,0 +1,107 @@
+.header {
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 100%;
+  max-width: 1440px;
+  width: 100%;
+  height: 93px;
+  padding: 0 50px 0 50px;
+  border: 1px black solid;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  overflow: hidden;
+
+  .logo {
+    img {
+      width: 141px;
+      height: 141px;
+    }
+  }
+
+  .navigation {
+    display: flex;
+    flex-direction: row;
+    gap: 50px;
+
+    a {
+      position: relative;
+      color: #000000;
+      text-decoration: none;
+      transition: color 0.3s ease;
+
+      &::after {
+        content: "";
+        position: absolute;
+        left: 0;
+        bottom: -2px;
+        width: 0%;
+        height: 2px;
+        background-color: #00bcd4; /* акцентный цвет */
+        transition: width 0.3s ease;
+      }
+
+      &:hover {
+        color: #00bcd4;
+      }
+
+      &:hover::after {
+        width: 100%;
+      }
+    }
+  }
+
+  .auth-actions {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+
+    .auth-link {
+      text-decoration: none;
+      color: #000;
+      opacity: 0.4;
+      font-size: 14px;
+      transition: opacity 0.3s ease, color 0.3s ease;
+
+      &:hover {
+        opacity: 0.8;
+        color: #029491;
+      }
+    }
+
+    .auth-divider {
+      width: 2px;
+      height: 20px;
+      background-color: #029491;
+      opacity: 0.6;
+      border-radius: 20px;
+      transition: transform 0.3s ease;
+
+      // эффект появления (например, можно применить к hover блока)
+      .auth-actions:hover & {
+        transform: scaleY(1.1);
+      }
+    }
+
+    .auth-button {
+      width: 65px;
+      height: 26px;
+      border-radius: 5px;
+      border: none;
+      background-color: #7ce3e1;
+      font-weight: 500;
+      cursor: pointer;
+      transition: transform 0.2s ease, background-color 0.3s ease;
+
+      &:hover {
+        transform: translateY(-2px);
+        background-color: #5cd8d5;
+      }
+
+      &:active {
+        transform: translateY(1px);
+      }
+    }
+  }
+}
