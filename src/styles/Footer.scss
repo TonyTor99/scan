@@ -44,3 +44,18 @@
     }
   }
 }
+
+@media screen and (max-width: 375px) {
+  .footer {
+    padding: 10px;
+  }
+
+  .footer .logo img {
+    width: 111px;
+    height: 111px;
+  }
+
+  .footer .footer-nav {
+    font-size: 13px;
+  }
+}

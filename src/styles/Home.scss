@@ -1,0 +1,360 @@
+.home {
+  padding: 0 50px 0 50px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  max-width: 1440px;
+  width: 100%;
+
+  .promo {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    margin-top: 50px;
+
+    .promo-text {
+      display: flex;
+      flex-direction: column;
+      align-items: start;
+      gap: 20px;
+
+      h1 {
+        font-family: "Ferry", sans-serif;
+        font-size: 60px;
+        font-weight: 900;
+        text-transform: uppercase;
+      }
+
+      p {
+        font-size: 20px;
+        font-weight: 400;
+      }
+
+      .promo-button {
+        font-size: 22px;
+        font-weight: 500;
+        text-decoration: none;
+        color: #ffffff;
+        max-width: 335px;
+        width: 100%;
+        background-color: #5970ff;
+        margin-top: 50px;
+        padding: 15px 30px;
+        border-radius: 5px;
+        text-align: center;
+      }
+    }
+
+    .promo-image {
+      img {
+        max-width: 630px;
+        width: 100%;
+      }
+    }
+  }
+
+  .benefits {
+    margin-top: 180px;
+    max-width: 1440px;
+    width: 100%;
+
+    h2 {
+      font-family: "Ferry", sans-serif;
+      font-size: 45px;
+      font-weight: 900;
+      text-transform: uppercase;
+    }
+
+    .carousel-wrapper {
+      position: relative;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      margin-top: 60px;
+      margin-bottom: 80px;
+      width: 100%;
+
+      .arrow {
+        background: none;
+        border: none;
+        cursor: pointer;
+        padding: 0;
+        z-index: 1;
+
+        img {
+          width: 32px;
+          height: 32px;
+        }
+      }
+
+      .benefits-carousel {
+        overflow-x: auto;
+        scroll-behavior: smooth;
+        display: flex;
+        gap: 20px;
+        padding: 10px 0;
+        flex: 1;
+
+        &::-webkit-scrollbar {
+          display: none;
+        }
+
+        -ms-overflow-style: none;
+        scrollbar-width: none;
+
+        .benefit-card {
+          flex: 0 0 400px;
+          background: #fff;
+          border-radius: 10px;
+          box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+          padding: 30px;
+          display: flex;
+          flex-direction: column;
+          align-items: flex-start;
+          gap: 20px;
+
+          img {
+            width: 69px;
+            height: 70px;
+          }
+
+          p {
+            font-size: 16px;
+            line-height: 1.4;
+            color: #000;
+          }
+        }
+      }
+    }
+
+    .benefit-illustration {
+      margin-top: 70px;
+      max-width: 1440px;
+      width: 100%;
+    }
+  }
+
+  .tariffs {
+    width: 100%;
+    margin-top: 80px;
+    margin-bottom: 100px;
+
+    h2 {
+      font-family: "Ferry", sans-serif;
+      font-size: 45px;
+      font-weight: 900;
+      margin-bottom: 70px;
+      text-transform: uppercase;
+    }
+
+    .tariffs-container {
+      width: 100%;
+      display: flex;
+      justify-content: space-between;
+      gap: 30px;
+
+      .tariff-list {
+        max-width: 415px;
+        width: 100%;
+        border-radius: 10px;
+        border: 2px solid #ffb64f;
+        box-shadow: 0px 0px 20px 0px #00000033;
+        overflow: hidden;
+        position: relative;
+
+        .tariff-list.active-tariff {
+          border: 2px solid #5970ff !important;
+        }
+
+        &.border-none {
+          border: none;
+        }
+
+        .tariff-card {
+          display: flex;
+          flex-direction: column;
+          height: 100%;
+
+          .tariff-header {
+            background-color: #ffb64f;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 20px;
+
+            &.blue {
+              background-color: #7ce3e1;
+            }
+
+            &.black {
+              background-color: #000000;
+              color: #ffffff;
+            }
+
+            .tariff-header-text {
+              h3 {
+                font-size: 30px;
+                font-weight: 500;
+              }
+
+              p {
+                font-size: 18px;
+                font-weight: 400;
+              }
+            }
+
+            img {
+              width: 92px;
+              height: 83px;
+            }
+          }
+
+          .tariff-info {
+            padding: 30px;
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+
+            .tariff-price {
+              .price {
+                font-size: 30px;
+                font-weight: 500;
+                display: flex;
+                align-items: center;
+                gap: 20px;
+
+                span {
+                  font-size: 25px;
+                  opacity: 40%;
+                  text-decoration: line-through;
+                }
+              }
+
+              .price-info {
+                font-size: 18px;
+                font-weight: 400;
+              }
+            }
+
+            .tariff-details {
+              margin-top: 50px;
+              margin-bottom: 50px;
+
+              h4 {
+                font-size: 20px;
+                font-weight: 500;
+              }
+
+              .tariff-names {
+                list-style: none;
+                padding: 0;
+                margin: 10px 0 0 0;
+
+                li {
+                  position: relative;
+                  padding-left: 24px;
+                  margin-bottom: 5px;
+                  font-size: 14px;
+                  line-height: 1.4;
+                  display: flex;
+                  align-items: center;
+
+                  &::before {
+                    content: "";
+                    position: absolute;
+                    left: 0;
+                    top: 2px;
+                    width: 16px;
+                    height: 16px;
+                    background-image: url("../../public/assets/home/check.svg");
+                    background-size: contain;
+                    background-repeat: no-repeat;
+                  }
+                }
+              }
+            }
+
+            .tariff-button {
+              width: 100%;
+              background-color: #5970ff;
+              color: #ffffff;
+              font-size: 20px;
+              font-weight: 400;
+              border: none;
+              padding: 20px;
+              border-radius: 5px;
+              cursor: pointer;
+              margin-top: auto;
+            }
+
+            .tariff-button.gray {
+              background-color: #d2d2d2;
+              color: #000000;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 375px) {
+
+  .home {
+    padding: 0 10px 0 10px;
+  }
+
+  .home .promo {
+    flex-direction: column;
+  }
+
+  .home .promo .promo-text h1 {
+    font-size: 28px;
+  }
+
+  .home .promo .promo-text p {
+    font-size: 18px;
+  }
+
+
+  .home .benefits h2 {
+    font-size: 28px;
+  }
+
+  .home .benefits .carousel-wrapper .benefits-carousel .benefit-card {
+    max-width: 250px;
+    width: 100%;
+    padding: 10px;
+  }
+
+  .home .benefits .carousel-wrapper .arrow {
+    display: none;
+  }
+  
+  .home .benefits {
+    margin-top: 50px;
+  }
+
+  .home .promo .promo-text {
+    margin-bottom: 30px;
+  }
+
+  .home .benefits .carousel-wrapper {
+    margin-top: 20px;
+    margin-bottom: 0;
+  }
+
+  .home .tariffs h2 {
+    font-size: 28px;
+    margin-bottom: 20px;
+  }
+
+  .home .tariffs .tariffs-container {
+    flex-direction: column;
+  }
+  
+  .home .tariffs {
+    margin-bottom: 50px;
+  }
+}

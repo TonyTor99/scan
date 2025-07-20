@@ -1,0 +1,199 @@
+.login-page {
+  padding: 0 50px;
+  max-width: 1440px;
+  width: 100%;
+  display: flex;
+  align-items: start;
+  justify-content: space-between;
+  margin-bottom: 100px;
+  margin-top: 100px;
+
+  .login-left {
+    flex: 1;
+    font-size: 30px;
+    font-weight: 900;
+
+    h1 {
+      font-family: "Ferry", sans-serif;
+      font-size: 40px;
+      font-weight: 900;
+      line-height: 1.4;
+    }
+
+    img {
+      margin-left: 150px;
+
+      width: 321px;
+    }
+  }
+
+  .login-form-wrapper {
+    flex: 1;
+    max-width: 420px;
+    padding: 30px;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0px 0px 20px 0px #00000026;
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    position: relative;
+    margin-right: 85px;
+
+    .zamok {
+      width: 75px;
+      position: absolute;
+      top: -58px;
+      left: -38px;
+    }
+
+    .tabs {
+      display: flex;
+      margin-bottom: 20px;
+      gap: 10px;
+
+      button {
+        flex: 1;
+        font-size: 16px;
+        font-weight: 400;
+        padding: 10px 0;
+        border: none;
+        background-color: transparent;
+        cursor: pointer;
+        border-bottom: 3px solid #ccc;
+        opacity: 40%;
+
+        &.active {
+          border-bottom: 3px solid #029491;
+          color: #029491;
+          opacity: 1;
+        }
+      }
+    }
+
+    .login-form {
+      display: flex;
+      flex-direction: column;
+      gap: 15px;
+
+      .error {
+        border: 1px solid red;
+      }
+
+      .error-message {
+        font-size: 12px;
+        color: red;
+        margin-top: 5px;
+      }
+
+      .submit-btn:disabled {
+        background-color: #ccc;
+        cursor: default;
+      }
+
+      label {
+        font-size: 14px;
+        font-weight: 400;
+        display: flex;
+        flex-direction: column;
+        color: #949494;
+
+        input {
+          padding: 10px;
+          margin-top: 5px;
+          border: 1px solid #ccc;
+          border-radius: 5px;
+          font-size: 16px;
+        }
+      }
+
+      .submit-btn {
+        background-color: #5970ff;
+        color: #fff;
+        border: none;
+        border-radius: 5px;
+        font-size: 16px;
+        padding: 15px;
+        margin-top: 10px;
+        cursor: pointer;
+
+        &:hover {
+          background-color: #475be8;
+        }
+
+        &:disabled:hover {
+          background-color: #ccc;
+        }
+      }
+
+      .forgot-password {
+        background: none;
+        border: none;
+        color: #5970ff;
+        font-size: 12px;
+        text-align: center;
+        text-decoration: underline;
+        cursor: pointer;
+      }
+
+      .social-login {
+        margin-top: 20px;
+
+        p {
+          font-size: 16px;
+          margin-bottom: 10px;
+          color: #949494;
+        }
+
+        .social-buttons {
+          display: flex;
+          justify-content: start;
+          gap: 10px;
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 375px) {
+  .login-page {
+    flex-direction: column;
+    padding: 0 10px;
+  }
+
+  .login-page .login-left h1 {
+    font-size: 22px;
+    margin-bottom: 50px;
+  }
+
+  .login-page .login-left img {
+    margin-left: 0;
+  }
+
+  .login-page
+    .login-form-wrapper
+    .login-form
+    .social-login
+    .social-buttons
+    a
+    img {
+    width: 80px;
+  }
+
+  .login-page .login-form-wrapper .zamok {
+    top: -76px;
+    left: 171px;
+  }
+
+  .login-page .login-form-wrapper {
+    margin-right: 0;
+  }
+
+  .login-page .login-left {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 50px;
+  }
+}

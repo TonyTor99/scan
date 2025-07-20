@@ -6,7 +6,6 @@
   width: 100%;
   height: 93px;
   padding: 0 50px 0 50px;
-  border: 1px black solid;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
@@ -17,6 +16,117 @@
     img {
       width: 141px;
       height: 141px;
+    }
+  }
+
+  .menu {
+    display: none;
+    width: 30px;
+  }
+
+  .mobile-menu {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    background-color: #029491;
+    z-index: 999;
+    display: flex;
+    flex-direction: column;
+    padding: 0 10px 20px 10px;
+    color: #ffffff;
+    animation: slideIn 0.3s ease forwards;
+    animation-duration: 0.3s;
+    animation-fill-mode: forwards;
+
+    &.slideIn {
+      animation-name: slideIn;
+    }
+
+    &.slideOut {
+      animation-name: slideOut;
+    }
+
+    .mobile-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+
+      img:first-child {
+        width: 111px;
+      }
+
+      .close-icon {
+        width: 24px;
+        height: 24px;
+        cursor: pointer;
+      }
+    }
+
+    .mobile-nav {
+      margin-top: 40px;
+      display: flex;
+      flex-direction: column;
+      gap: 40px;
+      font-size: 16px;
+      font-weight: 400;
+
+      a {
+        color: #fff;
+        text-decoration: none;
+        font-size: 18px;
+        text-align: center;
+      }
+    }
+
+    .mobile-auth {
+      margin-top: 50px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 20px;
+
+      .auth-link {
+        color: #fff;
+        opacity: 0.4;
+        font-size: 14px;
+        text-decoration: none;
+      }
+
+      .auth-button {
+        width: 80%;
+        height: 40px;
+        border-radius: 5px;
+        border: none;
+        background-color: #7ce3e1;
+        color: #000;
+        font-weight: 600;
+        cursor: pointer;
+        font-size: 16px;
+
+        &:hover {
+          background-color: #5cd8d5;
+        }
+      }
+    }
+  }
+
+  @keyframes slideIn {
+    from {
+      transform: translateX(100%);
+    }
+    to {
+      transform: translateX(0%);
+    }
+  }
+
+  @keyframes slideOut {
+    from {
+      transform: translateX(0%);
+    }
+    to {
+      transform: translateX(100%);
     }
   }
 
@@ -38,7 +148,7 @@
         bottom: -2px;
         width: 0%;
         height: 2px;
-        background-color: #00bcd4; /* акцентный цвет */
+        background-color: #00bcd4;
         transition: width 0.3s ease;
       }
 
@@ -72,13 +182,12 @@
 
     .auth-divider {
       width: 2px;
-      height: 20px;
+      height: 26px;
       background-color: #029491;
       opacity: 0.6;
       border-radius: 20px;
       transition: transform 0.3s ease;
 
-      // эффект появления (например, можно применить к hover блока)
       .auth-actions:hover & {
         transform: scaleY(1.1);
       }
@@ -103,5 +212,140 @@
         transform: translateY(1px);
       }
     }
+  }
+
+  .balance-panel {
+    background-color: #f4f4f4;
+    border-radius: 5px;
+    padding: 10px 15px;
+    font-size: 12px;
+    color: #949494;
+    min-width: 100px;
+    text-align: left;
+    line-height: 1.4;
+
+    @keyframes rotate360 {
+      from {
+        transform: rotate(0deg);
+      }
+      to {
+        transform: rotate(360deg);
+      }
+    }
+
+    .loading-spinner {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+
+      svg,
+      img {
+        width: 25px;
+        height: 25px;
+        margin-bottom: 10px;
+        animation: rotate360 1s linear infinite;
+      }
+    }
+
+    .limits-box {
+      display: flex;
+      flex-direction: column;
+      align-items: end;
+      gap: 4px;
+
+      .used {
+        color: #000;
+        font-weight: 600;
+        font-size: 14px;
+      }
+
+      .label {
+        font-size: 10px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 10px;
+
+        .black {
+          font-weight: 700;
+          font-size: 14px;
+          color: #000;
+        }
+
+        .green {
+          font-weight: 700;
+          font-size: 14px;
+          color: #8ac540;
+        }
+      }
+    }
+  }
+
+  .user-info {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+
+    .user-name {
+      font-size: 14px;
+      color: #000;
+      text-align: end;
+
+      span {
+        color: #949494;
+        font-size: 12px;
+        cursor: pointer;
+      }
+    }
+
+    .avatar {
+      width: 32px;
+      height: 32px;
+      border-radius: 50%;
+      cursor: pointer;
+    }
+  }
+}
+
+@media screen and (max-width: 375px) {
+  .header .navigation {
+    display: none;
+  }
+
+  .header .auth-actions {
+    display: none;
+  }
+
+  .header .auth-actions.with-balance {
+    display: flex;
+  }
+
+  .header .user-info {
+    display: none;
+  }
+
+  .header .menu {
+    display: block;
+  }
+
+  .header {
+    padding: 0 10px 0 10px;
+  }
+  .header .balance-panel .limits-box .label {
+    flex-direction: column;
+    gap: 0;
+    justify-content: start;
+    align-items: start;
+    width: 100%;
+  }
+
+  .header .logo img {
+    width: 111px;
+    height: 111px;
+  }
+
+  .header .balance-panel {
+    padding: 4px 10px;
   }
 }

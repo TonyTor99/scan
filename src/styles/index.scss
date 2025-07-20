@@ -1,3 +1,12 @@
+@font-face {
+  font-family: 'ferry';
+  src: url('../../public/fonts/Ferry_Black.otf') format('opentype');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+
 * {
   margin: 0;
   padding: 0;
@@ -6,4 +15,13 @@
 
 body {
     font-family: "Inter", sans-serif;
+}
+
+.container {
+  max-width: 1440px;
+  width: 100%;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
